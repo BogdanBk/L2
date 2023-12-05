@@ -1,0 +1,14 @@
+D:\codes\codes for uni\SecondLab\Converter\bin\Debug\net6.0\Converter.exe
+D:\codes\codes for uni\SecondLab\Converter\bin\Debug\net6.0\Converter.deps.json
+D:\codes\codes for uni\SecondLab\Converter\bin\Debug\net6.0\Converter.runtimeconfig.json
+D:\codes\codes for uni\SecondLab\Converter\bin\Debug\net6.0\Converter.dll
+D:\codes\codes for uni\SecondLab\Converter\bin\Debug\net6.0\Converter.pdb
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.GeneratedMSBuildEditorConfig.editorconfig
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.AssemblyInfoInputs.cache
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.AssemblyInfo.cs
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.csproj.CoreCompileInputs.cache
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.dll
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\refint\Converter.dll
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.pdb
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\Converter.genruntimeconfig.cache
+D:\codes\codes for uni\SecondLab\Converter\obj\Debug\net6.0\ref\Converter.dll
