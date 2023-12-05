@@ -1,126 +1,120 @@
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class CurrencyConverter
+class Converter
 {
-    private double usdExchangeRate;
-    private double eurExchangeRate;
-    private double plnExchangeRate;
+    private double usd;
+    private double eur;
+    private double pln;
 
-    public CurrencyConverter(double usd, double eur, double pln)
+    public Converter(double usd, double eur, double pln) 
     {
-        usdExchangeRate = usd;
-        eurExchangeRate = eur;
-        plnExchangeRate = pln;
+        this.usd = usd;
+        this.eur = eur;
+        this.pln = pln;
     }
 
-    public char GetUserChoiceFirst()
+    public char UserCurrencyChoice()
     {
-        char input;
-        do
-        {
-            Console.WriteLine();
-            Console.WriteLine("Enter your choice");
-            Console.WriteLine("A - From UAH to USD, EUR, PLN");
-            Console.WriteLine("B - From USD, EUR, PLN to UAH");
-            Console.WriteLine("E - Exit");
-            Console.Write("A, B, E: ");
-            input = char.Parse(Console.ReadLine());
-        } while (input != 'A' && input != 'a' && input != 'B' && input != 'b' && input != 'E' && input != 'e');
+        Console.WriteLine("\n" +
+                          "Enter your choice\n" +
+                          "1 - From UAH to USD, EUR, PLN\n" +
+                          "2 - From USD, EUR, PLN to UAH\n" +
+                          "3 - Exit");
+        Console.Write("Choice: ");
+        char input = Console.ReadKey().KeyChar;
 
         return input;
     }
 
-    public void HandleUserChoiceSecond(char input)
+    public char UserChoiceFromUAH()
     {
+        Console.WriteLine("\n" +
+                          "Choose currency\n" +
+                          "1 - UAH > USD\n" +
+                          "2 - UAH > EUR\n" +
+                          "3 - UAH > PLN\n" +
+                          "4 - Back");
+        Console.Write("Choice: ");
+        char input = Console.ReadKey().KeyChar;
+        return input;
+
+    }
+    public void UserConvertFromUAH(char input)
+    {
+        double convertedAmount = 0.0;
+        double uahAmount;
+        try
+        {
+            Console.WriteLine("\n" +
+                              "Enter how much do you want to convert: ");
+            uahAmount = double.Parse((Console.ReadLine()));
+        } catch (FormatException) { Console.WriteLine("Invalid input"); return; }
         switch (input)
         {
-            case 'A':
-            case 'a':
-                Console.WriteLine("Choose currency");
-                Console.WriteLine("1 - UAH > USD");
-                Console.WriteLine("2 - UAH > EUR");
-                Console.WriteLine("3 - UAH > PLN");
-                Console.WriteLine("4 - Back");
-                int currencyChoice = int.Parse(Console.ReadLine());
-                if (currencyChoice == 4)
-                {
-                    break;
-                }
-                double convertedAmount = 0.0;
-                Console.WriteLine($"Enter how much do you want to convert: ");
-                double uahAmount = double.Parse(Console.ReadLine());
-                switch (currencyChoice)
-                {
-                    case 1:
-                        convertedAmount = uahAmount / usdExchangeRate;
-                        Console.WriteLine($"Converted amount: {convertedAmount} USD. With the dollar exchange rate of {usdExchangeRate}");
-                        break;
-                    case 2:
-                        convertedAmount = uahAmount / eurExchangeRate;
-                        Console.WriteLine($"Converted amount: {convertedAmount} EUR. With the euro exchange rate of {eurExchangeRate}");
-                        break;
-                    case 3:
-                        convertedAmount = uahAmount / plnExchangeRate;
-                        Console.WriteLine($"Converted amount: {convertedAmount} PLN. With the zloty exchange rate of {plnExchangeRate}");
-                        break;
-                    default:
-                        Console.WriteLine("Error in currency choice.");
-                        break;
-                }
+            case '1':
+                convertedAmount = uahAmount / usd;
+                Console.WriteLine($"Converted amount: {convertedAmount} USD. With the dollar exchange rate of {usd}");
                 break;
-            case 'B':
-            case 'b':
-                Console.WriteLine("Choose currency");
-                Console.WriteLine("1 - USD > UAH");
-                Console.WriteLine("2 - EUR > UAH");
-                Console.WriteLine("3 - PLN > UAH");
-                Console.WriteLine("4 - Back");
-                int currencyChoiceSecond = int.Parse(Console.ReadLine());
-                if (currencyChoiceSecond == 4)
-                {
-                    break;
-                }
-                double convertedAmountSecond = 0.0;
-                Console.WriteLine($"Enter how much do you want to convert: ");
-                double uahAmountSecond = double.Parse(Console.ReadLine());
-
-                switch (currencyChoiceSecond)
-                {
-                    case 1:
-                        convertedAmount = usdExchangeRate * uahAmountSecond;
-                        Console.WriteLine($"Converted amount: {convertedAmount} USD. With the dollar exchange rate of {usdExchangeRate}");
-                        break;
-                    case 2:
-                        convertedAmount = eurExchangeRate * uahAmountSecond;
-                        Console.WriteLine($"Converted amount: {convertedAmount} EUR. With the euro exchange rate of {eurExchangeRate}");
-                        break;
-                    case 3:
-                        convertedAmount = plnExchangeRate * uahAmountSecond;
-                        Console.WriteLine($"Converted amount: {convertedAmount} PLN. With the zloty exchange rate of {plnExchangeRate}");
-                        break;
-                    default:
-                        Console.WriteLine("Error in currency choice.");
-                        break;
-                }
+            case '2':
+                convertedAmount = uahAmount / eur;
+                Console.WriteLine($"Converted amount: {convertedAmount} EUR. With the euro exchange rate of {eur}");
+                break;
+            case '3':
+                convertedAmount = uahAmount / pln;
+                Console.WriteLine($"Converted amount: {convertedAmount} PLN. With the zloty exchange rate of {pln}");
+                break;
+            default:
+                Console.WriteLine("Error in currency choice.");
                 break;
         }
     }
-}
-
-class Program
-{
-    static void Main()
+    public char UserChoiceFromForeign()
     {
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-        CurrencyConverter currencyConverter = new CurrencyConverter(27.50, 31.00, 6.50);
-
-        char userChoiceFirst;
-        do
-        {
-            userChoiceFirst = currencyConverter.GetUserChoiceFirst();
-            currencyConverter.HandleUserChoiceSecond(userChoiceFirst);
-
-        } while (userChoiceFirst != 'E' && userChoiceFirst != 'e');
+        Console.WriteLine("\n" +
+                          "Choose currency\n" +
+                          "1 - USD > UAH\n" +
+                          "2 - EUR > UAH\n" +
+                          "3 - PLN > UAH\n" +
+                          "4 - Back");
+        Console.Write("Choice: ");
+        char input = Console.ReadKey().KeyChar;
+        return input;
     }
+
+    public void UserConvertFromForeign(char input)
+    {
+        double convertedAmount = 0.0;
+        double uahAmountSecond;
+        try
+        {
+            Console.WriteLine("\n" +
+                              "Enter how much do you want to convert: ");
+            uahAmountSecond = double.Parse(Console.ReadLine());
+        } catch (FormatException) { Console.WriteLine("Invalid input"); return; }
+
+        switch (input)
+        {
+            case '1':
+                convertedAmount = usd * uahAmountSecond;
+                Console.WriteLine($"Converted amount: {convertedAmount} UAH. With the dollar exchange rate of {usd}");
+                break;
+            case '2':
+                convertedAmount = eur * uahAmountSecond;
+                Console.WriteLine($"Converted amount: {convertedAmount} UAH. With the euro exchange rate of {eur}");
+                break;
+            case '3':
+                convertedAmount = pln * uahAmountSecond;
+                Console.WriteLine($"Converted amount: {convertedAmount} UAH. With the zloty exchange rate of {pln}");
+                break;
+            default:
+                Console.WriteLine("Error in currency choice.");
+                break;
+        }
+    }
+    
+
 }
