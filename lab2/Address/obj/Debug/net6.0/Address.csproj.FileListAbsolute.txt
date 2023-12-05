@@ -1,0 +1,14 @@
+D:\codes\codes for uni\SecondLab\SecondLab\bin\Debug\net6.0\Address.exe
+D:\codes\codes for uni\SecondLab\SecondLab\bin\Debug\net6.0\Address.deps.json
+D:\codes\codes for uni\SecondLab\SecondLab\bin\Debug\net6.0\Address.runtimeconfig.json
+D:\codes\codes for uni\SecondLab\SecondLab\bin\Debug\net6.0\Address.dll
+D:\codes\codes for uni\SecondLab\SecondLab\bin\Debug\net6.0\Address.pdb
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.GeneratedMSBuildEditorConfig.editorconfig
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.AssemblyInfoInputs.cache
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.AssemblyInfo.cs
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.csproj.CoreCompileInputs.cache
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.dll
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\refint\Address.dll
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.pdb
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\Address.genruntimeconfig.cache
+D:\codes\codes for uni\SecondLab\SecondLab\obj\Debug\net6.0\ref\Address.dll
